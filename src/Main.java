@@ -11,7 +11,7 @@ public class Main {
 
 
         // Crear la ventana de login
-        JFrame VentFrame = new JFrame("Login");
+        JFrame VentFrame = new JFrame("Calculadora");
         VentFrame.setContentPane(new Ventana().ventanaform);
         VentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         VentFrame.pack();
