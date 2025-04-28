@@ -9,7 +9,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         // Crear la ventana de login
         JFrame VentFrame = new JFrame("Calculadora");
         VentFrame.setContentPane(new Ventana().ventanaform);
