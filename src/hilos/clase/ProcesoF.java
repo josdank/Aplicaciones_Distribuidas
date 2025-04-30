@@ -1,16 +1,15 @@
 package hilos.clase;
 
 public class ProcesoF implements Runnable {
-    private VistaAuto vistaAuto;
-
-    // Constructor para recibir la instancia de VistaAuto
-    public ProcesoF(VistaAuto vistaAuto) {
+    public FormularioAuto vistaAuto;
+    // Constructor para recibir la instancia de FormularioAuto
+    public ProcesoF(FormularioAuto vistaAuto) {
         this.vistaAuto = vistaAuto;
     }
 
     @Override
     public void run() {
-        // Llamamos a la vista de la ventana desde el hilo de ProcesoD
-        vistaAuto.VistaAutoP.setVisible(true);
+        System.out.println("-- Proceso E --");
+        vistaAuto.run();
     }
 }

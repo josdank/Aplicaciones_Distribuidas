@@ -1,43 +1,45 @@
 package hilos.clase;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
 
 public class VistaAuto {
-    @Getter @Setter private JTextField imptMarca;
-    @Getter @Setter private JTextField ImptModelo;
-    @Getter @Setter private JTextField ImptPrecio;
-    @Getter @Setter private JButton procesarButton;
-    public  JPanel VistaAutoP;
+    private JPanel panelPrincipal;
+    private JLabel lblMarca;
+    private JLabel lblModelo;
+    private JLabel lblPrecio;
 
-    public VistaAuto() {
-        imptMarca.addActionListener(new ActionListener() {
+    public VistaAuto(String marca, String modelo, String precio) {
+        lblMarca.addComponentListener(new ComponentAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-
+            public String toString() {
+                return super.toString();
             }
         });
-        ImptModelo.addActionListener(new ActionListener() {
+        lblModelo.addComponentListener(new ComponentAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-
+            public String toString() {
+                return super.toString();
             }
         });
-        ImptPrecio.addActionListener(new ActionListener() {
+        lblPrecio.addComponentListener(new ComponentAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-
+            public String toString() {
+                return super.toString();
             }
         });
-        procesarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-            }
-        });
+        // Asignar texto a los labels
+        lblMarca.setText(marca);
+        lblModelo.setText(modelo);
+        lblPrecio.setText(precio);
+
+        // Crear ventana JFrame para mostrar esta vista
+        JFrame frame = new JFrame("Vista Auto");
+        frame.setContentPane(panelPrincipal);
+        frame.setSize(300, 200);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }

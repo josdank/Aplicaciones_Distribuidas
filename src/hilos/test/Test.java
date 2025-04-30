@@ -1,6 +1,7 @@
 package hilos.test;
 
 import hilos.clase.*;
+import hilos.clase.FormularioAuto;
 
 public class Test {
     public static void main(String[] args) {
@@ -22,19 +23,17 @@ public class Test {
 
         ProcesoE y = new ProcesoE("Hola Como estas");
         Thread e = new Thread(y);
-        VistaAuto vistaAuto = new VistaAuto();
+
+        FormularioAuto vistaAuto = new FormularioAuto();
         ProcesoF procesoF = new ProcesoF(vistaAuto);
         Thread f = new Thread(procesoF);
-
-
-
-
+        f.start();
         a.start();
         b.start();
         c.start();
         d.start();
         e.start();
-        f.start();
+
     }
 }
 /* */
