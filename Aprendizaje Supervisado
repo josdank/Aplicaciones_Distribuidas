@@ -1,0 +1,156 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMRND/Z3Tq0LHx6o00jrxRG",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/josdank/1erclase_appDsitribuidas/blob/master/Aprendizaje%20Supervisado\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iUDuepeZISE5",
+        "outputId": "64789fa1-1e08-4d6c-b97d-4764f9cdc3e5"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Distribución de categorías:\n",
+            "Categoria\n",
+            "Malo      127\n",
+            "Normal     70\n",
+            "Bueno      20\n",
+            "Name: count, dtype: int64\n",
+            "\n",
+            "Precisión del modelo: 1.00\n",
+            "\n",
+            "Ingresa las estadísticas de un nuevo delantero:\n",
+            "Goles en la temporada: 15\n",
+            "Asistencias en la temporada: 20\n",
+            "\n",
+            "Delantero Estrella: Percentil 75+ (G+A > 16.0)\n",
+            "Detalles: 15.0 Goles | 20.0 Asistencias | Total: 35.0\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/usr/local/lib/python3.11/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names\n",
+            "  warnings.warn(\n"
+          ]
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "from sklearn.preprocessing import StandardScaler\n",
+        "from sklearn.neighbors import KNeighborsClassifier\n",
+        "\n",
+        "# 1. Cargar el dataset desde GitHub (RAW URL)\n",
+        "csv_url = \"https://raw.githubusercontent.com/josdank/Fundamentos-de-IA/Deberes/premier-player-23-24.csv\"\n",
+        "\n",
+        "try:\n",
+        "    df = pd.read_csv(csv_url, encoding='latin1')\n",
+        "except Exception as e:\n",
+        "    print(f\"\\nERROR al cargar el archivo desde GitHub: {e}\")\n",
+        "    exit()\n",
+        "\n",
+        "# 2. Filtrar jugadores FW (delanteros)\n",
+        "df_fw = df[df[\"Pos\"].str.upper().str.contains(\"FW|FORWARD|FWD\", na=False, regex=True)].copy()\n",
+        "\n",
+        "if df_fw.empty:\n",
+        "    print(\"\\nNo hay jugadores FW. Posiciones disponibles:\", df[\"Pos\"].unique())\n",
+        "    exit()\n",
+        "\n",
+        "# 3. Crear categorías con manejo de duplicados\n",
+        "df_fw[\"Total_Contrib\"] = df_fw[\"Gls\"] + df_fw[\"Ast\"]\n",
+        "\n",
+        "try:\n",
+        "    # Intentar con cuantiles\n",
+        "    df_fw[\"Categoria\"] = pd.qcut(df_fw[\"Total_Contrib\"],\n",
+        "                                 q=[0, 0.25, 0.75, 1],\n",
+        "                                 labels=[\"Malo\", \"Normal\", \"Bueno\"],\n",
+        "                                 duplicates='drop')\n",
+        "except ValueError:\n",
+        "    # Si falla, usar rangos fijos\n",
+        "    bins = [-1, 5, 15, 100]\n",
+        "    df_fw[\"Categoria\"] = pd.cut(df_fw[\"Total_Contrib\"],\n",
+        "                                bins=bins,\n",
+        "                                labels=[\"Malo\", \"Normal\", \"Bueno\"])\n",
+        "\n",
+        "# 4. Mostrar distribución\n",
+        "print(\"\\nDistribución de categorías:\")\n",
+        "print(df_fw[\"Categoria\"].value_counts())\n",
+        "\n",
+        "# 5. Preparar datos para el modelo\n",
+        "X = df_fw[[\"Gls\", \"Ast\"]]\n",
+        "y = df_fw[\"Categoria\"]\n",
+        "\n",
+        "# 6. Dividir y normalizar datos\n",
+        "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n",
+        "scaler = StandardScaler()\n",
+        "X_train = scaler.fit_transform(X_train)\n",
+        "X_test = scaler.transform(X_test)\n",
+        "\n",
+        "# 7. Entrenar y evaluar modelo\n",
+        "knn = KNeighborsClassifier(n_neighbors=5)\n",
+        "knn.fit(X_train, y_train)\n",
+        "accuracy = knn.score(X_test, y_test)\n",
+        "print(f'\\nPrecisión del modelo: {accuracy:.2f}')\n",
+        "\n",
+        "# 8. Sistema de predicción interactivo\n",
+        "print(\"\\nIngresa las estadísticas de un nuevo delantero:\")\n",
+        "goles = float(input(\"Goles en la temporada: \"))\n",
+        "asistencias = float(input(\"Asistencias en la temporada: \"))\n",
+        "\n",
+        "nuevo_jugador = scaler.transform([[goles, asistencias]])\n",
+        "prediccion = knn.predict(nuevo_jugador)[0]\n",
+        "\n",
+        "if prediccion == \"Bueno\":\n",
+        "    msg = \"Delantero Estrella: Percentil 75+ (G+A > {})\".format(\n",
+        "        df_fw[df_fw[\"Categoria\"] == \"Bueno\"][\"Total_Contrib\"].min()\n",
+        "    )\n",
+        "elif prediccion == \"Normal\":\n",
+        "    msg = \"Delantero Promedio: Entre {} y {} G+A\".format(\n",
+        "        df_fw[df_fw[\"Categoria\"] == \"Normal\"][\"Total_Contrib\"].min(),\n",
+        "        df_fw[df_fw[\"Categoria\"] == \"Normal\"][\"Total_Contrib\"].max()\n",
+        "    )\n",
+        "else:\n",
+        "    msg = \"Mal Delantero: Menos de {} G+A\".format(\n",
+        "        df_fw[df_fw[\"Categoria\"] == \"Malo\"][\"Total_Contrib\"].max()\n",
+        "    )\n",
+        "\n",
+        "print(f\"\\n{msg}\")\n",
+        "print(f\"Detalles: {goles} Goles | {asistencias} Asistencias | Total: {goles + asistencias}\")\n"
+      ]
+    }
+  ]
+}
