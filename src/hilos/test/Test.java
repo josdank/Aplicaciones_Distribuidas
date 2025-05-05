@@ -26,8 +26,8 @@ public class Test {
 
         FormularioAuto vistaAuto = new FormularioAuto();
         ProcesoF procesoF = new ProcesoF(vistaAuto);
-        Thread f = new Thread(procesoF);
-        f.start();
+        Thread prosf = new Thread(procesoF);
+        prosf.start();
         a.start();
         b.start();
         c.start();
@@ -36,4 +36,4 @@ public class Test {
 
     }
 }
-/* */
+/* cambios en los archivos para subir*/
