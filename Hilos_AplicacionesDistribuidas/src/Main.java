@@ -10,7 +10,7 @@ public class Main {
                 // Crear la ventana principal
                 JFrame ventanaCarrera = new JFrame("Carrera de personajes");
                 ventanaCarrera.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                ventanaCarrera.setSize(400, 300);
+                ventanaCarrera.setSize(400, 200);
                 ventanaCarrera.setLocationRelativeTo(null);
 
                 // Instanciar la clase EjecucionCarrera
