@@ -19,7 +19,7 @@ public class OperacionesVista extends JFrame {
     private char operacionSeleccionada;
     private cliente cliente;
 
-    private static final String SERVIDOR_IP = "172.31.116.73"; // Dirección del servidor
+    private static final String SERVIDOR_IP = "192.168.100.168"; // Dirección del servidor
     private static final int PUERTO_SERVIDOR = 5000; // Puerto del servidor
 
     public OperacionesVista() {
