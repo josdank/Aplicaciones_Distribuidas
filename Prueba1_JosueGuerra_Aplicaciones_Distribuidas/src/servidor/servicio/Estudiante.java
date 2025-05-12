@@ -27,23 +27,18 @@ public class Estudiante {
     public int getId() {
         return id;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public String getTelefono() {
         return telefono;
     }
-
     public String getCarrera() {
         return carrera;
     }
-
     public int getSemestre() {
         return semestre;
     }
-
     public boolean isGratuidad() {
         return gratuidad;
     }
