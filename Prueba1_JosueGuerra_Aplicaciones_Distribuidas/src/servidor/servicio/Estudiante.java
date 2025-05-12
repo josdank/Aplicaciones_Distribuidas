@@ -96,7 +96,7 @@ public class Estudiante {
 
     @Override
     public String toString() {
-        return String.format("Estudiante{id=%d, Nombre: '%s', Telefono: '%s', Carrera: '%s', Semestre: %d, Gratuidad: %b}",
+        return String.format("Estudiante{id=%d, Nombres: '%s', Telefono: '%s', Carrera: '%s', Semestre: %d, Gratuidad: %b}",
                 id, nombre, telefono, carrera, semestre, gratuidad);
     }
 
