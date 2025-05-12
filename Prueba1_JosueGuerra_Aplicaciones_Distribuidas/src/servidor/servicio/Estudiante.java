@@ -5,7 +5,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.util.List;
 
-@Getter  // Esto generará todos los getters, pero los haremos explícitos para mayor claridad
+@Getter
 public class Estudiante {
     private final int id;
     private final String nombre;
