@@ -1,29 +1,21 @@
 package servidor.servicio;
-
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-
 public class Servidor {
     public void servicio() {
-
         int port = 5000;
-
         try {
-
             DatagramSocket socket = new DatagramSocket(port); // Crear socket UDP en el puerto 5000
             System.out.println("Servidor UDP WINDOWS iniciado en el puerto " + port);
 
             byte[] buffer = new byte[1024]; // Buffer para recibir mensajes
-
             while (true) {
                 // Recibir datagrama del cliente
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                 socket.receive(packet);
-
                 // Procesar datagrama
                 String mensaje = new String(packet.getData(), 0, packet.getLength());
                 System.out.println("Mensaje recibido: " + mensaje);
-
                 // Procesar el mensaje
                 String[] partes = mensaje.split(",");
                 if (partes.length == 3) {
