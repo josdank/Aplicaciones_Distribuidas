@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="886d598a-4c6e-462b-a56a-e139f962cf4a" name="Changes" comment="Prueba1_JosueGuerra_Aplicaciones_Distribuidas" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Pruebas" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;josdank&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/josdank/Aplicaciones_Distribuidas.git&quot;,
+    &quot;accountId&quot;: &quot;0f2d82c8-0cbc-4715-9916-255c52772e39&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2x0dWYBSVgcnK9dT3fAxhqm3hh1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Estudiante.executor": "Run",
+    "Application.test.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "onboarding.tips.debug.path": "C:/Users/APP DISTRIBUIDAS/Documents/App_Dsitribuidas_Josue/Aplicaciones_Distribuidas/Prueba1_JosueGuerra_Aplicaciones_Distribuidas/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.fileTypes"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="886d598a-4c6e-462b-a56a-e139f962cf4a" name="Changes" comment="" />
+      <created>1747078958530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747078958530</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Prueba1_GuerraJosue_AplicaiconesDistribudas">
+      <option name="closed" value="true" />
+      <created>1747081609143</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747081609143</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Prueba1_GuerraJosue_AplicaiconesDistribudas">
+      <option name="closed" value="true" />
+      <created>1747081839052</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747081839052</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Prueba1_JosueGuerra_Aplicaciones_Distribuidas">
+      <option name="closed" value="true" />
+      <created>1747082230204</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747082230204</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Prueba1_JosueGuerra_Aplicaciones_Distribuidas">
+      <option name="closed" value="true" />
+      <created>1747082320400</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747082320400</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Prueba1_JosueGuerra_Aplicaciones_Distribuidas">
+      <option name="closed" value="true" />
+      <created>1747082392373</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747082392373</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Prueba1_JosueGuerra_Aplicaciones_Distribuidas">
+      <option name="closed" value="true" />
+      <created>1747082418006</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747082418006</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Prueba1_GuerraJosue_AplicaiconesDistribudas" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/Pruebas' into Pruebas&#10;&#10;# Conflicts:&#10;#&#9;Prueba1_JosueGuerra_Aplicaciones_Distribuidas/src/servidor/servicio/Estudiante.java" />
+    <MESSAGE value="Prueba1_JosueGuerra_Aplicaciones_Distribuidas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prueba1_JosueGuerra_Aplicaciones_Distribuidas" />
+  </component>
+</project>
