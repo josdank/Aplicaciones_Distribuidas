@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a4c8565-c766-4cd8-b9b1-f4d272ae2221" name="Changes" comment="" />
+    <list default="true" id="ec2c065c-d328-4765-9c3d-1b5e0deabdd2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +12,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Deberes" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,17 +30,15 @@
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2wfB7RgGscOP5iEv7OLKTYt3S0N" />
+  <component name="ProjectId" id="2xko0REz4VixxF5EBHnntyySaCb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "Talleres__en__clase",
@@ -57,42 +57,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6a4c8565-c766-4cd8-b9b1-f4d272ae2221" name="Changes" comment="" />
-      <created>1746422579304</created>
+      <changelist id="ec2c065c-d328-4765-9c3d-1b5e0deabdd2" name="Changes" comment="" />
+      <created>1748491208557</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1746422579304</updated>
-      <workItem from="1746422580435" duration="84000" />
-      <workItem from="1746422681276" duration="18000" />
-      <workItem from="1746659451968" duration="149000" />
-      <workItem from="1746659688422" duration="245000" />
+      <updated>1748491208557</updated>
+      <workItem from="1748491209690" duration="202000" />
+      <workItem from="1748491470002" duration="179000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/Talleres_en_clase" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
