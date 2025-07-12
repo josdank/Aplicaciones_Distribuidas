@@ -126,7 +126,7 @@ Los datos de las provincias son obtenidos mediante una petición HTTP (`/provinc
 
 ## 📸 Captura de la aplicación
 
-![Captura del mapa](https://via.placeholder.com/900x400?text=Mapa+Interactivo+del+Ecuador)
+![Captura del mapa](<img width="1297" height="768" alt="image" src="https://github.com/user-attachments/assets/809085ea-e51f-4db0-af6f-442c813b4126" />)
 
 ---
 
