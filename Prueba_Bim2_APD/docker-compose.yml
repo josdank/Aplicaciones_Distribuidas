@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+
+  maestro1:
+    image: mysql:8.0
+    container_name: maestro1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_informacion
+    volumes:
+      - ./mysql/master:/etc/mysql/conf.d
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 3306:3306
+    networks:
+      - red-app
+
+  esclavo1:
+    image: mysql:8.0
+    container_name: esclavo1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql/slave:/etc/mysql/conf.d
+    depends_on:
+      - maestro1
+    ports:
+      - 3307:3306
+    networks:
+      - red-app
+
+  servidor1:
+    build:
+      context: ./servidor1
+    container_name: servidor1
+    environment:
+      MYSQL_HOST: maestro1
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DB: db_informacion
+      MYSQL_PORT: 3306
+    depends_on:
+      - maestro1
+    ports:
+      - 5000:5000
+    networks:
+      - red-app
+
+  servidor2:
+    build:
+      context: ./servidor2
+    container_name: servidor2
+    environment:
+      MYSQL_HOST: esclavo1
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DB: db_informacion
+      MYSQL_PORT: 3306
+    depends_on:
+      - esclavo1
+    ports:
+      - 5001:5000
+    networks:
+      - red-app
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - servidor1
+      - servidor2
+    networks:
+      - red-app
+
+networks:
+  red-app:

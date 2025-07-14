@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Datos registrados</title>
+</head>
+<body>
+  <h2>Lista de personas registradas</h2>
+  <table border="1">
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Experiencia</th>
+      <th>Formación</th>
+    </tr>
+    {% for fila in datos %}
+    <tr>
+      <td>{{ fila[1] }}</td>
+      <td>{{ fila[2] }}</td>
+      <td>{{ fila[3] }}</td>
+      <td>{{ fila[4] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <br><br>
+
+  <!-- Botón que redirige directamente al formulario en servidor1 -->
+  <a href="http://localhost:5000">
+    <button type="button">Volver al Formulario</button>
+  </a>
+</body>
+</html>
